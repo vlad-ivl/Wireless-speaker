@@ -1,0 +1,17 @@
+.button {
+    &-buy {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 48px;
+        background-color: $textColor ;
+        color: $c-gray ;
+        text-decoration: none;
+
+        &:hover {
+            background-color: #131313 ;
+            box-shadow: 1px 3px 8px rgba(86, 86, 88, 0.4);
+        }
+    }
+}

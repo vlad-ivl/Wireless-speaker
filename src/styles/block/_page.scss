@@ -1,0 +1,40 @@
+.page {
+    font-family: 'Inter', sans-serif;
+    background: $c-gray;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    &__see-more {
+      display: inline-block;
+      color: #0DB2B3;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 14px;
+      text-transform: uppercase;
+      width: max-content;
+      text-decoration: none;
+
+      &::after {
+        content: '';
+        display: block;
+        margin-top: 5px;
+        height: 1px;
+        width: 0%;
+        background-color: #0DB2B3;
+        transition: .3s;
+      }
+
+      &:hover {
+        &::after {
+          content: '';
+          display: block;
+          margin-top: 5px;
+          height: 1px;
+          width: 100%;
+          background-color: #0DB2B3;
+        }
+      }
+      
+    }
+  }

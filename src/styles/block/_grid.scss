@@ -1,0 +1,89 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+        
+
+    @include onDesktop {
+        grid-template-columns: repeat(12, 1fr);
+    }
+    @include onTablet {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    &--desktop {
+        display: block;
+        @include onTablet {
+            display: grid;
+            gap: 20px;
+        }
+        @include onDesktop {
+            display: grid;
+            gap: 30px;
+        }
+    }
+
+    &__item__tablet {
+        @include onTablet {
+
+            @for $start from 1 through 12 {
+                @for $end from $start through 12 {
+                    &--#{$start}-#{$end} {
+                        grid-column: #{$start} / #{$end + 1} ;
+                    }
+                }
+            }
+        }
+    }
+    &__item {
+
+        @include onDesktop {
+
+            @for $start from 1 through 12 {
+                @for $end from $start through 12 {
+                    &--#{$start}-#{$end} {
+                        grid-column: #{$start} / #{$end + 1} ;
+                    }
+                }
+            }
+        }
+    }
+
+    &__eye {
+        @include onTablet {
+            height: min-content;
+            display: grid;
+            grid-template-columns: 45% 55%;
+            grid-template-rows: 19%, 8%, 19%, 16%, 6%, 32%;
+            @include onTablet {
+                gap: 20px;
+            }
+            @include onDesktop {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            &__row {
+                @for $start from 1 through 6 {
+                    @for $end from $start through 6 {
+                        &--#{$start}-#{$end} {
+                            grid-row: #{$start} / #{$end + 1};
+                        }
+                    }
+                }
+            }
+            &__column {
+                @for $start from 1 through 2 {
+                    @for $end from $start through 2 {
+                        &--#{$start}-#{$end} {
+                            grid-column: #{$start} / #{$end + 1};
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+
+    }
+
+}
+
